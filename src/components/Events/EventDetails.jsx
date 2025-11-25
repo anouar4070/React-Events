@@ -28,7 +28,7 @@ export default function EventDetails() {
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["events"],
-        refetchType: "none",
+        refetchType: "none", //when you call invalidateQueries, this existing query will not automatically be triggered again immediately
       });
       navigate("/events");
     },

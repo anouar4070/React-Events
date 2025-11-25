@@ -19,7 +19,7 @@ export default function NewEvent() {
 
   function handleSubmit(formData) {
     mutate({ event: formData });
-    // navigate('/events');
+    // navigate('/events'); //we should wait until mutation finished, so this code should be within useMutation
   }
 
   return (
