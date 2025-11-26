@@ -6,7 +6,7 @@ An event management application demonstrating modern React development patterns.
 
 | Component | URL |
 | :--- | :--- |
-| **Frontend (Vercel)** | 👉 https://react-events-green.vercel.app/events |
+| **Frontend (Vercel)** | 👉 https://react-events-green.vercel.app/events|
 | **Backend API (Render)** | 👉 https://react-events-3ywp.onrender.com/events |
 
 ---
