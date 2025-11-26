@@ -1,5 +1,5 @@
-const BASE_URL = "https://react-events-3ywp.onrender.com";
-//const BASE_URL = "http://localhost:3000";
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export default function ImagePicker({ images, selectedImage, onSelect }) {
   return (
     <div id="image-picker">

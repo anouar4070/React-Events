@@ -1,5 +1,5 @@
-const BASE_URL = "https://react-events-3ywp.onrender.com";
-//const BASE_URL = "http://localhost:3000";
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 
 import Header from "../Header.jsx";

@@ -1,6 +1,6 @@
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 import { Link } from 'react-router-dom';
-const BASE_URL = "https://react-events-3ywp.onrender.com";
-//const BASE_URL = "http://localhost:3000";
 
 export default function EventItem({ event }) {
   const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
