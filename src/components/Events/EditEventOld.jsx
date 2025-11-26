@@ -19,15 +19,22 @@ export default function EditEvent() {
   });
 
   const { mutate } = useMutation({
+    // The function that sends the update request to the server
     mutationFn: updateEvent,
+    // Runs BEFORE the mutation request is sent (optimistic update)
     onMutate: async (data) => {
+      // Extract the new event data that will replace the old one
       const newEvent = data.event;
-
+      // 1. Cancel any outgoing refetch for this event
+      //    This prevents React Query from overwriting our optimistic update
       await queryClient.cancelQueries({ queryKey: ["events", params.id] });
+      // 2. Get the current event data from the cache
+      //    We store it in case we need to roll back (if the API request fails)
       const previousEvent = queryClient.getQueryData(["events", params.id]);
-
+      // 3. Immediately update the cache with the new event
+      //    This makes the UI feel instant (optimistic update)
       queryClient.setQueryData(["events", params.id], newEvent);
-
+      // 4. Return the previous data so onError() can restore it if needed
       return { previousEvent };
     },
     // roll back process:
