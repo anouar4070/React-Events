@@ -1,3 +1,5 @@
+const BASE_URL = "https://react-events-3ywp.onrender.com";
+//const BASE_URL = "http://localhost:3000";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 
 import Header from "../Header.jsx";
@@ -88,7 +90,7 @@ export default function EventDetails() {
         </header>
 
         <div id="event-details-content">
-          <img src={`http://localhost:3000/${data.image}`} alt={data.title} />
+          <img src={`${BASE_URL}/${data.image}`} alt={data.title} />
           <div id="event-details-info">
             <div>
               <p id="event-details-location">{data.location}</p>

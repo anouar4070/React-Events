@@ -1,3 +1,5 @@
+const BASE_URL = "https://react-events-3ywp.onrender.com";
+//const BASE_URL = "http://localhost:3000";
 export default function ImagePicker({ images, selectedImage, onSelect }) {
   return (
     <div id="image-picker">
@@ -10,7 +12,7 @@ export default function ImagePicker({ images, selectedImage, onSelect }) {
             className={selectedImage === image.path ? 'selected' : undefined}
           >
             <img
-              src={`http://localhost:3000/${image.path}`}
+              src={`${BASE_URL}/${image.path}`}
               alt={image.caption}
             />
           </li>
